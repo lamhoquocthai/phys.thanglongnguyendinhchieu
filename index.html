@@ -73,7 +73,28 @@
                 <i class="fa-solid fa-atom absolute -right-10 -bottom-10 text-white/10 text-[280px] pointer-events-none"></i>
             </div>
 
-            <!-- BỔ SUNG THÔNG TIN 2: GIỚI THIỆU LỚP HỌC -->
+            <!-- SLIDESHOW / GALERY HÌNH ẢNH HOẠT ĐỘNG LỚP HỌC (TỰ ĐỘNG CHẠY 4-5 ẢNH/LẦN) -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-4">
+                <div class="flex flex-col md:flex-row justify-between md:items-end gap-2">
+                    <div>
+                        <span class="text-brand-orange text-xs font-bold uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-full"><i class="fa-solid fa-camera mr-1"></i> Hình ảnh thực tế</span>
+                        <h3 class="text-2xl font-extrabold text-slate-800 mt-2">HÌNH ẢNH LỚP HỌC & SỰ KIỆN VUI NHỘN</h3>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button onclick="prevPhotoSlide()" class="w-10 h-10 rounded-full bg-slate-100 hover:bg-brand-blue hover:text-white transition flex items-center justify-center text-slate-600"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button onclick="nextPhotoSlide()" class="w-10 h-10 rounded-full bg-slate-100 hover:bg-brand-blue hover:text-white transition flex items-center justify-center text-slate-600"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Khung hiển thị 4-5 hình thay phiên nhau -->
+                <div class="relative overflow-hidden rounded-2xl bg-slate-100 py-2">
+                    <div id="photo-slides-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 transition-all duration-700 ease-in-out p-2">
+                        <!-- JS Render 4-5 ảnh mỗi lượt -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- GIỚI THIỆU LỚP HỌC -->
             <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200">
                 <div class="text-center max-w-3xl mx-auto mb-8">
                     <span class="text-brand-orange text-xs font-bold uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-full">Chào mừng bạn đến với</span>
@@ -82,7 +103,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Tiêu chí 1 -->
                     <div class="p-5 rounded-2xl bg-sky-50/60 border border-sky-100 hover:shadow-md transition">
                         <div class="w-12 h-12 bg-brand-blue text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow-sm">
                             <i class="fa-solid fa-building-user"></i>
@@ -91,7 +111,6 @@
                         <p class="text-slate-600 text-sm leading-relaxed">Phòng học thoáng mát, trang bị máy chiếu, dụng cụ thí nghiệm trực quan giúp tiếp thu bài giảng tối ưu.</p>
                     </div>
 
-                    <!-- Tiêu chí 2 -->
                     <div class="p-5 rounded-2xl bg-amber-50/60 border border-amber-100 hover:shadow-md transition">
                         <div class="w-12 h-12 bg-brand-orange text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow-sm">
                             <i class="fa-solid fa-heart-pulse"></i>
@@ -100,7 +119,6 @@
                         <p class="text-slate-600 text-sm leading-relaxed">Thầy Thái luôn đồng hành, theo sát từng học sinh, sẵn sàng giải đáp thắc mắc và truyền cảm hứng yêu thích môn học.</p>
                     </div>
 
-                    <!-- Tiêu chí 3 -->
                     <div class="p-5 rounded-2xl bg-sky-50/60 border border-sky-100 hover:shadow-md transition">
                         <div class="w-12 h-12 bg-brand-blue text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow-sm">
                             <i class="fa-solid fa-face-smile-beam"></i>
@@ -109,7 +127,6 @@
                         <p class="text-slate-600 text-sm leading-relaxed">Giảng dạy trực quan, vui vẻ, biến các công thức khô khan thành bài học dễ hiểu, nhớ lâu và ứng dụng thực tế.</p>
                     </div>
 
-                    <!-- Tiêu chí 4 -->
                     <div class="p-5 rounded-2xl bg-amber-50/60 border border-amber-100 hover:shadow-md transition">
                         <div class="w-12 h-12 bg-brand-orange text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow-sm">
                             <i class="fa-solid fa-bullseye"></i>
@@ -120,7 +137,7 @@
                 </div>
             </div>
 
-            <!-- BỔ SUNG THÔNG TIN 1: THẾ GIỚI VẬT LÍ VUI NHỘN & MÔ HÌNH KINHDIỂN -->
+            <!-- THẾ GIỚI VẬT LÍ VUI NHỘN & MÔ HÌNH KINHDIỂN -->
             <div class="bg-gradient-to-br from-slate-900 via-brand-darkblue to-slate-900 text-white rounded-3xl p-6 md:p-8 shadow-lg">
                 <div class="text-center mb-6">
                     <span class="text-amber-400 text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Khám phá môn học</span>
@@ -129,7 +146,6 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-center">
-                    <!-- Mô hình 1: Cấu trúc nguyên tử -->
                     <div class="bg-white/10 backdrop-blur border border-white/10 p-4 rounded-2xl hover:bg-white/20 transition group">
                         <div class="text-4xl text-amber-400 mb-2 group-hover:scale-110 transition transform">
                             <i class="fa-solid fa-atom"></i>
@@ -138,7 +154,6 @@
                         <p class="text-[11px] text-sky-200 mt-1">Hạt nhân & các Electron nhảy mức năng lượng</p>
                     </div>
 
-                    <!-- Mô hình 2: Dao động con lắc -->
                     <div class="bg-white/10 backdrop-blur border border-white/10 p-4 rounded-2xl hover:bg-white/20 transition group">
                         <div class="text-4xl text-sky-400 mb-2 group-hover:scale-110 transition transform">
                             <i class="fa-solid fa-arrows-left-right-to-line"></i>
@@ -147,7 +162,6 @@
                         <p class="text-[11px] text-sky-200 mt-1">Chuyển hóa Động năng & Thế năng linh hoạt</p>
                     </div>
 
-                    <!-- Mô hình 3: Quang học thấu kính -->
                     <div class="bg-white/10 backdrop-blur border border-white/10 p-4 rounded-2xl hover:bg-white/20 transition group">
                         <div class="text-4xl text-amber-400 mb-2 group-hover:scale-110 transition transform">
                             <i class="fa-solid fa-glasses"></i>
@@ -156,7 +170,6 @@
                         <p class="text-[11px] text-sky-200 mt-1">Khúc xạ, tán sắc ánh sáng cầu vồng</p>
                     </div>
 
-                    <!-- Mô hình 4: Từ trường & Điện trường -->
                     <div class="bg-white/10 backdrop-blur border border-white/10 p-4 rounded-2xl hover:bg-white/20 transition group">
                         <div class="text-4xl text-sky-400 mb-2 group-hover:scale-110 transition transform">
                             <i class="fa-solid fa-magnet"></i>
@@ -165,7 +178,6 @@
                         <p class="text-[11px] text-sky-200 mt-1">Đường sức từ & Cảm ứng điện từ kì diệu</p>
                     </div>
 
-                    <!-- Mô hình 5: Mạch điện -->
                     <div class="bg-white/10 backdrop-blur border border-white/10 p-4 rounded-2xl hover:bg-white/20 transition group col-span-2 sm:col-span-1">
                         <div class="text-4xl text-amber-400 mb-2 group-hover:scale-110 transition transform">
                             <i class="fa-solid fa-bolt font-bold"></i>
@@ -180,10 +192,9 @@
             <div>
                 <div class="text-center mb-6">
                     <h3 class="text-2xl font-bold text-slate-800">LUYỆN THI THỬ ONLINE THEO LỚP</h3>
-                    <p class="text-slate-500 text-sm">Cấu trúc đề chuẩn 18 Cấu trắc nghiệm + 4 Đúng/Sai + 4 Trả lời ngắn (50 phút)</p>
+                    <p class="text-slate-500 text-sm">Cấu trúc đề chuẩn 18 Cấu trắc nghiệm + 4 Đúng/Sai + 6 Trả lời ngắn (50 phút)</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Khối 10 -->
                     <div class="bg-white border-2 border-sky-100 hover:border-brand-blue rounded-2xl p-6 shadow-sm hover:shadow-xl transition flex flex-col justify-between group">
                         <div>
                             <div class="w-14 h-14 bg-sky-100 text-brand-blue rounded-2xl flex items-center justify-center text-2xl font-bold mb-4 group-hover:bg-brand-blue group-hover:text-white transition">10</div>
@@ -193,7 +204,6 @@
                         <button onclick="selectGradeExams(10)" class="w-full bg-sky-50 text-brand-blue hover:bg-brand-blue hover:text-white font-semibold py-2.5 rounded-xl transition">Vào Làm Bài Kiểm Tra</button>
                     </div>
 
-                    <!-- Khối 11 -->
                     <div class="bg-white border-2 border-amber-100 hover:border-brand-orange rounded-2xl p-6 shadow-sm hover:shadow-xl transition flex flex-col justify-between group">
                         <div>
                             <div class="w-14 h-14 bg-amber-100 text-brand-orange rounded-2xl flex items-center justify-center text-2xl font-bold mb-4 group-hover:bg-brand-orange group-hover:text-white transition">11</div>
@@ -203,7 +213,6 @@
                         <button onclick="selectGradeExams(11)" class="w-full bg-amber-50 text-brand-orange hover:bg-brand-orange hover:text-white font-semibold py-2.5 rounded-xl transition">Vào Làm Bài Kiểm Tra</button>
                     </div>
 
-                    <!-- Khối 12 -->
                     <div class="bg-white border-2 border-sky-100 hover:border-brand-darkblue rounded-2xl p-6 shadow-sm hover:shadow-xl transition flex flex-col justify-between group">
                         <div>
                             <div class="w-14 h-14 bg-blue-100 text-brand-darkblue rounded-2xl flex items-center justify-center text-2xl font-bold mb-4 group-hover:bg-brand-darkblue group-hover:text-white transition">12</div>
@@ -314,10 +323,10 @@
                     </div>
                 </div>
 
-                <!-- PHẦN 3: 4 CÂU TRẢ LỜI NGẮN -->
+                <!-- PHẦN 3: 6 CÂU TRẢ LỜI NGẮN (ĐÃ CẬP NHẬT THÀNH 6 CÂU) -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-6">
                     <div class="border-b border-slate-200 pb-2">
-                        <h4 class="text-lg font-bold text-brand-blue">PHẦN III. Câu hỏi trả lời ngắn (4 câu)</h4>
+                        <h4 class="text-lg font-bold text-brand-blue">PHẦN III. Câu hỏi trả lời ngắn (6 câu - Mỗi câu 0.25đ)</h4>
                         <p class="text-xs text-slate-500">Nhập kết quả dưới dạng số (dùng dấu phẩy ',' cho số thập phân, ví dụ: 2,5 hoặc -10)</p>
                     </div>
                     <div id="part3-questions" class="space-y-6">
@@ -376,7 +385,7 @@
 
                         <div>
                             <div class="flex justify-between items-center mb-1">
-                                <label class="block text-sm font-medium text-slate-700">Dữ liệu Đề Thi (Định dạng JSON cấu trúc 18 Căn bản + 4 Đ/S + 4 Trả lời ngắn)</label>
+                                <label class="block text-sm font-medium text-slate-700">Dữ liệu Đề Thi (Định dạng JSON cấu trúc 18 Trắc nghiệm + 4 Đ/S + 6 Trả lời ngắn)</label>
                                 <button type="button" onclick="loadSampleJSON()" class="text-xs text-brand-blue underline">Chèn dữ liệu mẫu chuẩn</button>
                             </div>
                             <textarea id="upload-exam-json" rows="10" required class="w-full border border-slate-300 p-3 rounded-xl font-mono text-xs outline-none focus:ring-2 focus:ring-brand-blue" placeholder="Dán nội dung cấu trúc đề thi JSON vào đây..."></textarea>
@@ -445,11 +454,16 @@
         </div>
     </footer>
 
-    <!-- MODAL 1: DÙNG ĐỂ NHẬP PASSWORD ADMIN -->
+    <!-- LIGHTBOX XEM ẢNH LỚN -->
+    <div id="image-lightbox" class="fixed inset-0 bg-black/80 hidden z-50 flex items-center justify-center p-4 cursor-pointer" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" class="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain">
+    </div>
+
+    <!-- MODAL 1: ADMIM PASS -->
     <div id="admin-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl space-y-4">
             <h3 class="text-lg font-bold text-slate-800">Đăng Nhập Quản Trị Viên</h3>
-            <p class="text-xs text-slate-500">Mật khẩu mặc định thử nghiệm: <code class="bg-slate-100 text-brand-orange px-1 rounded">123456</code></p>
+            <p class="text-xs text-slate-500">Mật khẩu thử nghiệm: <code class="bg-slate-100 text-brand-orange px-1 rounded">123456</code></p>
             <input type="password" id="admin-pass-input" placeholder="Nhập mật khẩu admin..." class="w-full border border-slate-300 p-2.5 rounded-xl outline-none focus:ring-2 focus:ring-brand-blue">
             <div class="flex justify-end gap-2">
                 <button onclick="closeAdminModal()" class="px-4 py-2 text-sm text-slate-600 hover:bg-slate-100 rounded-xl">Hủy</button>
@@ -458,7 +472,7 @@
         </div>
     </div>
 
-    <!-- MODAL 2: XEM LẠI BÀI THI / KẾT QUẢ CỦA HỌC SINH -->
+    <!-- MODAL 2: XEM BÀI THI HỌC SINH -->
     <div id="lookup-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl p-6 max-w-2xl w-full shadow-2xl space-y-4 max-h-[90vh] flex flex-col">
             <div class="flex justify-between items-center border-b pb-2">
@@ -477,16 +491,76 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT XỬ LÝ TOÀN BỘ LOGIC -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // --- 1. DỮ LIỆU BAN ĐẦU (MẪU) ---
+        // --- DANH SÁCH ẢNH DRIVE CỦA BẠN ---
+        const drivePhotos = [
+            "https://lh3.googleusercontent.com/d/13UT9ZXpAKefmCBdpS7eXAhYJxWUtH2hZ",
+            "https://lh3.googleusercontent.com/d/14Gm9kZZIjwWtXUE0627-dwN_8aTT3uIz",
+            "https://lh3.googleusercontent.com/d/1OF3TfKVEez-UxZalBOf2385pQiYHXUDr",
+            "https://lh3.googleusercontent.com/d/12yZkLaN3HdY0Dpo-q7GdaINDEmzCB5bY",
+            "https://lh3.googleusercontent.com/d/1dqqiXORVW7U5k71ywZCW2dCsL7ZLv-l7",
+            "https://lh3.googleusercontent.com/d/1WqF4UtcmnIXTAt0Gc1ut-CRrLkaQ553K",
+            "https://lh3.googleusercontent.com/d/1OVmcHtIPx60dzBsD3SIIIboKNWS_7FSO",
+            "https://lh3.googleusercontent.com/d/1qT4v6uUiS0IN8N2Q9_z19gnuRrzDi2nG",
+            "https://lh3.googleusercontent.com/d/1kaCWJfc3Pxv16yzOXGCP531rO7h3IJB9",
+            "https://lh3.googleusercontent.com/d/1F3_TqMxb_a3ITgoNMYDwxNDXtm34av6R",
+            "https://lh3.googleusercontent.com/d/1i4CzGWtYt4gcotE88eVrvmOhUD2Jrb6Z",
+            "https://lh3.googleusercontent.com/d/1B5q4x-t8vzhchjjt6ExBOfAZoBhKfhcC",
+            "https://lh3.googleusercontent.com/d/1siR6hZkH7bUbcuzcLS9D7wqpnXkkn5xj",
+            "https://lh3.googleusercontent.com/d/11hQPTV18g14q2QyocXtqQT0hoVpWgyTK"
+        ];
+
+        let currentPhotoIndex = 0;
+        const photosPerPage = 5; // Hiển thị 5 ảnh 1 lượt
+
+        function renderPhotoSlide() {
+            const container = document.getElementById('photo-slides-container');
+            if(!container) return;
+
+            let visiblePhotos = [];
+            for(let i = 0; i < photosPerPage; i++) {
+                let idx = (currentPhotoIndex + i) % drivePhotos.length;
+                visiblePhotos.push(drivePhotos[idx]);
+            }
+
+            container.innerHTML = visiblePhotos.map((url, index) => `
+                <div class="relative overflow-hidden rounded-xl h-36 md:h-44 group cursor-pointer shadow-sm border border-white" onclick="openLightbox('${url}')">
+                    <img src="${url}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Lớp học Vật Lí">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition"></div>
+                </div>
+            `).join('');
+        }
+
+        function nextPhotoSlide() {
+            currentPhotoIndex = (currentPhotoIndex + photosPerPage) % drivePhotos.length;
+            renderPhotoSlide();
+        }
+
+        function prevPhotoSlide() {
+            currentPhotoIndex = (currentPhotoIndex - photosPerPage + drivePhotos.length) % drivePhotos.length;
+            renderPhotoSlide();
+        }
+
+        // Tự động xoay vòng ảnh mỗi 3.5 giây
+        setInterval(nextPhotoSlide, 3500);
+
+        function openLightbox(url) {
+            document.getElementById('lightbox-img').src = url;
+            document.getElementById('image-lightbox').classList.remove('hidden');
+        }
+        function closeLightbox() {
+            document.getElementById('image-lightbox').classList.add('hidden');
+        }
+
+        // --- DỮ LIỆU BAN ĐẦU ---
         const defaultSchedules = [
             { code: "L10-LÍ1", name: "Lớp 10 Nền tảng Vật Lí", teacher: "Thầy Thái", time: "Thứ 3 - Thứ 5 (17g30 - 19g00)", openDate: "05/09/2026", closeDate: "30/05/2027", fee: "600.000đ / tháng" },
             { code: "L11-LÍ1", name: "Lớp 11 Nâng cao & Luyện đề", teacher: "Thầy Thái", time: "Thứ 2 - Thứ 6 (19g00 - 20g30)", openDate: "05/09/2026", closeDate: "30/05/2027", fee: "700.000đ / tháng" },
             { code: "L12-LÍ1", name: "Lớp 12 Luyện Thi TN THPT 9+", teacher: "Thầy Thái", time: "Thứ 4 - Chủ Nhật (18g00 - 20g00)", openDate: "01/08/2026", closeDate: "15/06/2027", fee: "800.000đ / tháng" },
         ];
 
-        // Mẫu 1 đề thi đầy đủ 18 Trắc nghiệm + 4 Đúng Sai + 4 Trả lời ngắn
+        // Mẫu 1 đề thi đầy đủ 18 Trắc nghiệm + 4 Đúng Sai + 6 TRẢ LỜI NGẮN
         const defaultExams = [
             {
                 code: "VL12-001",
@@ -508,15 +582,15 @@
                         { id: "d", text: "d) Gia tốc cực đại có giá trị a_max = ω²A.", correct: true }
                     ]
                 })),
-                part3: Array.from({length: 4}, (_, i) => ({
+                // CẬP NHẬT THÀNH 6 CÂU TRẢ LỜI NGẮN
+                part3: Array.from({length: 6}, (_, i) => ({
                     id: i+1,
-                    question: `Câu ${i+1} (TLN): Một con lắc lò xo có độ cứng k = 100 N/m, vật nặng m = 1kg. Lấy π² = 10. Tính chu kỳ dao động T của con lắc theo đơn vị giây (s)?`,
-                    correct: "0,63"
+                    question: `Câu ${i+1} (TLN): Tính giá trị Vật Lí mẫu câu số ${i+1} (nhập kết quả số thập phân nếu có)?`,
+                    correct: "0,5"
                 }))
             }
         ];
 
-        // Init LocalStorage nếu chưa có
         if(!localStorage.getItem('thaythai_schedules')) {
             localStorage.setItem('thaythai_schedules', JSON.stringify(defaultSchedules));
         }
@@ -531,6 +605,11 @@
         let currentExam = null;
         let timerInterval = null;
         let timeLeft = 50 * 60; // 50 phút
+
+        // Render slide ngay khi load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderPhotoSlide();
+        });
 
         // --- ROUTING / VIEW NAVIGATION ---
         function showView(viewName) {
@@ -599,7 +678,7 @@
                             <span class="text-xs font-mono text-slate-400">Mã: ${e.code}</span>
                         </div>
                         <h4 class="font-bold text-slate-800 text-base leading-snug mb-2">${e.title}</h4>
-                        <p class="text-xs text-slate-500"><i class="fa-regular fa-clock mr-1"></i> Thời gian: 50 phút | 26 câu hỏi</p>
+                        <p class="text-xs text-slate-500"><i class="fa-regular fa-clock mr-1"></i> Thời gian: 50 phút | 28 câu hỏi (18 TN + 4 ĐS + 6 TLN)</p>
                     </div>
                     <button onclick="startExam('${e.code}')" class="w-full bg-brand-orange hover:bg-brand-darkorange text-white font-bold py-2 rounded-xl transition text-sm shadow">
                         Vào Làm Bài
@@ -623,7 +702,7 @@
         }
 
         function renderTestPaper(exam) {
-            // Part 1
+            // Part 1: 18 câu
             const p1 = document.getElementById('part1-questions');
             p1.innerHTML = exam.part1.map((q, idx) => `
                 <div class="bg-slate-50 p-4 rounded-xl space-y-2">
@@ -642,7 +721,7 @@
                 </div>
             `).join('');
 
-            // Part 2
+            // Part 2: 4 câu Đ/S
             const p2 = document.getElementById('part2-questions');
             p2.innerHTML = exam.part2.map((q, idx) => `
                 <div class="bg-slate-50 p-4 rounded-xl space-y-3">
@@ -667,7 +746,7 @@
                 </div>
             `).join('');
 
-            // Part 3
+            // Part 3: 6 CÂU TRẢ LỜI NGẮN
             const p3 = document.getElementById('part3-questions');
             p3.innerHTML = exam.part3.map((q, idx) => `
                 <div class="bg-slate-50 p-4 rounded-xl space-y-2">
@@ -679,7 +758,6 @@
             `).join('');
         }
 
-        // --- CẮT TIMER ---
         function startTimer(seconds) {
             clearInterval(timerInterval);
             timeLeft = seconds;
@@ -738,7 +816,7 @@
                 else if(correctCount === 4) totalScore += 1.0;
             });
 
-            // 3. Chấm Phần 3 (4 câu trả lời ngắn)
+            // 3. Chấm Phần 3 (6 câu trả lời ngắn - Mỗi câu 0.25đ)
             currentExam.part3.forEach(q => {
                 let userAns = formData.get(`p3_${q.id}`);
                 if(userAns) {
@@ -856,7 +934,7 @@
                         { id: "d", text: "d) Mệnh đề d sai", correct: false }
                     ]
                 })),
-                part3: Array.from({length: 4}, (_, i) => ({
+                part3: Array.from({length: 6}, (_, i) => ({
                     id: i+1,
                     question: `Câu ${i+1} (TLN): Nhập giá trị câu trả lời ngắn ${i+1}?`,
                     correct: "5,5"
